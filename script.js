@@ -32,7 +32,18 @@ function capitaliseSentence(text) {
     result.textContent = finalText;
 }
 
+function handleEmptyInput(text) {
+    if (text === "") {
+        result.textContent = "Missing input!";
+        result.style.color = "red";
+    } else {
+        result.textContent = "";
+        result.style.color = "darkblue";
+    }
+}
+
 lowerBtn.addEventListener("click", () => getLowercase(inputArea.value));
 upperBtn.addEventListener("click", () => getUppercase(inputArea.value));
 capitaliseBtn.addEventListener("click", () => getCapitalised(inputArea.value));
 capitaliseSentenceBtn.addEventListener("click", () => capitaliseSentence(inputArea.value));
+inputArea.addEventListener("input", () => handleEmptyInput(inputArea.value));
