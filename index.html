@@ -4,10 +4,18 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width initial-scale=1.0">
         <title>Text Formatter</title>
-        <script src="script.js"></script>
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <button onclick="toLower()">lower case</button>
-        <button onclick="toUpper()">UPPER CASE</button>
+        <h1 class="title">Text Formatter v1</h1>
+        <p class="subtitle">Try out this text formatter!</p>
+        <div class="textarea">
+            <textarea class="input" id="input" placeholder="Write here..."></textarea>
+        </div>
+        <button class="btn" id="lowercase-btn">lower case</button>
+        <button class="btn" id="uppercase-btn">UPPER CASE</button>
+        <p>Modified text:</p>
+        <p id="result"></p>
+        <script src="script.js"></script>
     </body>
 </html>

@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.title {
+    color: darkblue;
+    margin: 50px auto 30px;
+}
+
+.subtitle {
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.textarea {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.input {
+    width: 250px;
+    height: 75px;
+    resize: none;
+    font-size: 1rem;
+}
+
+.input::placeholder {
+    font-size: 1rem;
+}
+
+.btn {
+    padding: 10px;
+    cursor: pointer;
+    background-color: rgb(10, 101, 185);
+    color: white;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: blue;
+    transform: scale(1.05);
+}
+
+#result {
+    color: darkblue;
+    font-weight: 700;
+}
