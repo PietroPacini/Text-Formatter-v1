@@ -1,7 +1,4 @@
-const lowerBtn = document.getElementById("lowercase-btn");
-const upperBtn = document.getElementById("uppercase-btn");
-const capitaliseBtn = document.getElementById("capitalise-btn");
-const capitaliseSentenceBtn = document.getElementById("sentence-capitalise-btn");
+const buttons = document.querySelectorAll(".btn");
 const result = document.getElementById("result");
 const inputArea = document.getElementById("input");
 
@@ -32,8 +29,8 @@ function capitaliseSentence(text) {
     result.textContent = finalText;
 }
 
-function handleEmptyInput(text) {
-    if (text === "") {
+function emptyInputMessage(text) {
+    if (!text) {
         result.textContent = "Missing input!";
         result.style.color = "red";
     } else {
@@ -42,8 +39,17 @@ function handleEmptyInput(text) {
     }
 }
 
-lowerBtn.addEventListener("click", () => getLowercase(inputArea.value));
-upperBtn.addEventListener("click", () => getUppercase(inputArea.value));
-capitaliseBtn.addEventListener("click", () => getCapitalised(inputArea.value));
-capitaliseSentenceBtn.addEventListener("click", () => capitaliseSentence(inputArea.value));
-inputArea.addEventListener("input", () => handleEmptyInput(inputArea.value));
+const actions = {
+    "lowercase-btn": getLowercase,
+    "uppercase-btn": getUppercase,
+    "capitalise-btn": getCapitalised,
+    "sentence-capitalise-btn": capitaliseSentence
+};
+
+buttons.forEach((button) => button.addEventListener("click", event => {
+    const action = actions[event.target.id];
+    if (action) {
+        action(inputArea.value);
+    }
+}));
+inputArea.addEventListener("input", () => emptyInputMessage(inputArea.value));
