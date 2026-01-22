@@ -32,11 +32,10 @@ function capitaliseSentence(text) {
 function emptyInputMessage(text) {
     if (!text) {
         result.textContent = "Missing input!";
-        result.style.color = "red";
-    } else {
-        result.textContent = "";
-        result.style.color = "darkblue";
-    }
+        result.classList.add("error");
+        return true;
+    } 
+    return false;
 }
 
 const actions = {
@@ -47,9 +46,13 @@ const actions = {
 };
 
 buttons.forEach((button) => button.addEventListener("click", event => {
+    if (!inputArea.value) {
+        emptyInputMessage(inputArea.value);
+        return;
+    }
+    result.classList.remove("error");
     const action = actions[event.target.id];
     if (action) {
         action(inputArea.value);
     }
 }));
-inputArea.addEventListener("input", () => emptyInputMessage(inputArea.value));

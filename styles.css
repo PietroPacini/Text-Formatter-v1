@@ -53,3 +53,7 @@ body {
     color: darkblue;
     font-weight: 700;
 }
+
+#result.error {
+    color: red;
+}
