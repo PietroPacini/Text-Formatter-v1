@@ -11,22 +11,31 @@ function getUppercase(text) {
 }
 
 function getCapitalised(text) {
-    let array = text.split(" ");
-    let allLower = array.map((word) => word.toLowerCase());
-    let capitalArray = allLower.map((word) => word.replace(word[0], word[0].toUpperCase()));
-    let final = capitalArray.join(" ");
+    const final = text.toLowerCase().split(" ").map((word) => {
+        if (!word) return "";
+        return word[0].toUpperCase() + word.slice(1);
+    }).join(" ");
     result.textContent = final;
 }
 
 function capitaliseSentence(text) {
-    let lowerText = text.toLowerCase();
-    let finalText = lowerText.replace(lowerText[0], lowerText[0].toUpperCase());
-    for (let i = 2; i < finalText.length; i++) {
-        if ((finalText[i - 2] === "." || finalText[i - 2] === "!" || finalText[i - 2] === "?") && finalText[i - 1] === " ") {
-            finalText = finalText.slice(0, i) + finalText[i].toUpperCase() + finalText.slice(i + 1);
+    if (!text) return;
+    let chars = text.toLowerCase().trim().split("");
+    if (chars[0]) {
+        chars[0] = chars[0].toUpperCase();
+    }
+    for (i = 1; i < chars.length; i++) {
+        if (chars[i] === "." || chars[i] === "!" || chars[i] === "?") {
+            let j = i + 1
+            while (chars[j] === " " && j < chars.length) {
+                j++;
+            }
+            if (chars[j]) {
+                chars[j] = chars[j].toUpperCase();
+            }
         }
     }
-    result.textContent = finalText;
+    result.textContent = chars.join("");
 }
 
 function emptyInputMessage(text) {
