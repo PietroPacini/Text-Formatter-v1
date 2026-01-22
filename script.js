@@ -19,7 +19,6 @@ function getCapitalised(text) {
 }
 
 function capitaliseSentence(text) {
-    if (!text) return;
     let chars = text.toLowerCase().trim().split("");
     if (chars[0]) {
         chars[0] = chars[0].toUpperCase();
