@@ -38,7 +38,7 @@ function capitaliseSentence(text) {
     result.textContent = chars.join("");
 }
 
-function emptyInputMessage(text) {
+function isInputEmpty(text) {
     if (!text) {
         result.textContent = "Missing input!";
         result.classList.add("error");
@@ -56,7 +56,7 @@ const actions = {
 
 buttons.forEach((button) => button.addEventListener("click", event => {
     if (!inputArea.value) {
-        emptyInputMessage(inputArea.value);
+        isInputEmpty(inputArea.value);
         return;
     }
     result.classList.remove("error");
