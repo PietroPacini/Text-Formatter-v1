@@ -10,6 +10,7 @@ function getUppercase(text) {
     result.textContent = text.toUpperCase();
 }
 
+//Create an array of words, capitalise each word, then join in a string.
 function getCapitalised(text) {
     const final = text.toLowerCase().split(" ").map((word) => {
         return word[0].toUpperCase() + word.slice(1);
@@ -17,6 +18,7 @@ function getCapitalised(text) {
     result.textContent = final;
 }
 
+//Create an array of charachters, capitalize only if preceded by ". ", "! " or "? ", then join in a string.
 function capitaliseSentence(text) {
     let chars = text.toLowerCase().trim().split("");
     for (i = 1; i < chars.length; i++) {
@@ -40,6 +42,7 @@ const actions = {
     "sentence-capitalise-btn": capitaliseSentence
 };
 
+// First handle an empty input. If the input is not empty, execute the function that corresponds to the clicked button.
 buttons.forEach((button) => button.addEventListener("click", event => {
     if (!inputArea.value) {
         alert("Missing input!");
