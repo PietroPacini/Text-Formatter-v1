@@ -12,7 +12,6 @@ function getUppercase(text) {
 
 function getCapitalised(text) {
     const final = text.toLowerCase().split(" ").map((word) => {
-        if (!word) return "";
         return word[0].toUpperCase() + word.slice(1);
     }).join(" ");
     result.textContent = final;
@@ -20,9 +19,6 @@ function getCapitalised(text) {
 
 function capitaliseSentence(text) {
     let chars = text.toLowerCase().trim().split("");
-    if (chars[0]) {
-        chars[0] = chars[0].toUpperCase();
-    }
     for (i = 1; i < chars.length; i++) {
         if (chars[i] === "." || chars[i] === "!" || chars[i] === "?") {
             let j = i + 1
