@@ -37,11 +37,6 @@ function capitaliseSentence(text) {
     result.textContent = chars.join("");
 }
 
-function isInputEmpty(text) {
-    if (!text) return true 
-    else return false;
-}
-
 const actions = {
     "lowercase-btn": getLowercase,
     "uppercase-btn": getUppercase,
