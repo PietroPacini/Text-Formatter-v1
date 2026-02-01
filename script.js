@@ -18,9 +18,10 @@ function getCapitalised(text) {
     result.textContent = final;
 }
 
-//Create an array of charachters, capitalize only if preceded by ". ", "! " or "? ", then join in a string.
+//Create an array of charachters, capitalize only the first charachter or if preceded by ". ", "! " or "? ", then join in a string.
 function capitaliseSentence(text) {
     let chars = text.toLowerCase().trim().split("");
+    chars[0] = chars[0].toUpperCase();
     for (i = 1; i < chars.length; i++) {
         if (chars[i] === "." || chars[i] === "!" || chars[i] === "?") {
             let j = i + 1
