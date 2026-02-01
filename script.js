@@ -38,12 +38,8 @@ function capitaliseSentence(text) {
 }
 
 function isInputEmpty(text) {
-    if (!text) {
-        result.textContent = "Missing input!";
-        result.classList.add("error");
-        return true;
-    } 
-    return false;
+    if (!text) return true 
+    else return false;
 }
 
 const actions = {
@@ -55,10 +51,8 @@ const actions = {
 
 buttons.forEach((button) => button.addEventListener("click", event => {
     if (!inputArea.value) {
-        isInputEmpty(inputArea.value);
-        return;
+        alert("Missing input!");
     }
-    result.classList.remove("error");
     const action = actions[event.target.id];
     if (action) {
         action(inputArea.value);
