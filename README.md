@@ -4,8 +4,7 @@ Text Formatter will transform your sentence in various ways.
 ## Description
 This mini-app is my **first project** here on gitHub in my coding journey, and has been made in order to get familiarity with basic JS concepts. In this app you can write your sentence, and and it will modify it for you by simply clicking a button.
 
-
-![Text Formatter at work](Screenshots/Screenshot.png)
+<p align="center"><img src="Screenshots/Screenshot.png" alt="Text Formatter in action"></p>
 
 ## Functionalities
 With Text Formatter, you can transform your sentence in various ways: you can make it all lowercase or all uppercase. You can also capitalise only the first letter of every word, or even only the first letter of every different sentence.
