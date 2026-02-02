@@ -12,8 +12,8 @@ With Text Formatter, you can transform your sentence in various ways: you can ma
 ## Technologies
 The core structure of Text Formatter is written with **HTML**, the style is added with **CSS**, and the functionalities are handled with **JavaScript**.
 
-## Getting started
-Coming soon!
+## Link - Try it here
+https://pietropacini.github.io/Text-Formatter-v1/
 
 ## Project status
 This project is a **learning exercise**, and therefore it will probably have flaws. This is also my first attempt at building something with JavaScript, so other different projects will follow.
